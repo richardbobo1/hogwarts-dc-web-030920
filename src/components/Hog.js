@@ -61,10 +61,12 @@ class Hog extends Component{
             <button onClick={this.toggleDisplay}>Hide or Show this hog</button>
             { this.state.hogCardDisplayed ? 
 
-            <div className="inner-card">
+            <div className="ui card">
             <div className="image"><img src= {this.getImage()} /></div>
-            <div className="name"> Name: {this.props.hog.name} </div>
-        {this.state.detailsDisplayed === true ? <div onClick={this.setToFalse}><p>Specialty: {this.props.hog.specialty}</p> <p>Greased: {this.props.hog.greased ? "True" : "False"} </p> <p>Weight: {this.props.hog.weight}</p> <p>Highest Medal Achieved: {this.props.hog['highest medal achieved']}</p> </div> : <div onClick={this.handleClick}>Show details </div>}
+            <div className="content"></div>
+            <a className="header"> Name: {this.props.hog.name} </a>
+
+        {this.state.detailsDisplayed === true ? <div onClick={this.setToFalse} className="content"><p>Specialty: {this.props.hog.specialty}</p> <p>Greased: {this.props.hog.greased ? "True" : "False"} </p> <p>Weight: {this.props.hog.weight}</p> <p>Highest Medal Achieved: {this.props.hog['highest medal achieved']}</p> </div> : <div onClick={this.handleClick} className="content">Show details </div>}
             </div>
             : "" }
 
